@@ -15,6 +15,7 @@ app.use(express.static(path.join(__dirname, '..', 'public')));
 
 app.get('/', (req, res) => {
   const regionName = process.env.REGION_NAME || 'Default';
+  const appName = process.env.APP_NAME || 'Unknown app name'
   res.send(`
     <!DOCTYPE html>
     <html lang="en">
@@ -28,6 +29,8 @@ app.get('/', (req, res) => {
       <div class="container">
         <h1>Witaj w swiecie prosto z Hello World app z ${regionName} regionu!</h1>
         <h2>z chmury azure</h2>
+        <h1>My name is ${appName}.</h1>
+        <h2>Enjoy!</h2>
       </div>
     </body>
     </html>
